@@ -15,8 +15,8 @@ MAINTAINER Michal Skrzypczak
 #Allows to reach Tomcat manager (localhost:8080)
 #Login:admin 
 #Password:admin
-COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
-COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
+COPY ./conf_files/tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
+COPY ./conf_files/context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
 
 #Copy war application into tomcat dir
 #It is reachable @ localhost:8080/SimpleWebApp 
