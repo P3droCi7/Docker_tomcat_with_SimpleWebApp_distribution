@@ -1,41 +1,50 @@
-##How it works?
+##Steps to follow
+<ol>
+<li>Clone Github project repository</li>
+<li>Open CMD</li>
+<li>Change directory to root dir - Docker_tomcat_with_SimpleWebApp_distribution</li>
+<li>Build docker image with help of Dockerfile (more details inside Dockerfile) - root dir, run command:</li>
 
-	1.Clone Github project repository
-	2.Open CMD
-	3.Change directory to root dir - <b>Docker_tomcat_with_SimpleWebApp_distribution</b>
-		#cd root \app dir
-	4.Build docker image with help of Dockerfile (root dir), run command:
-		#docker build -t image_name .
-	5.Build Docker conatiner, run command:
-		#docker run -d -p 8080:8080 --name container_name image_name
+	docker build -t image_name .
+<li>Build Docker conatiner, run command:</li>
+
+	docker run -d -p 8080:8080 --name container_name image_name
+</ol>
 
 ##You are able to reach:
+- Tomcat Manager @localhost:8080
 
-	- Tomcat Manager @ localhost:8080
-		Login:admin 
-		Password:admin
-	- SimpleWebApp   @	localhost:8080/SimpleWebApp
+        Login:admin
+        Password:admin
+- SimpleWebApp   @localhost:8080/SimpleWebApp
 
 ##Helpful Applications
+<ol>
+<li>Docker Kitematic (v0.17.0 - doesnt have bug with showing no container log)</li>
+<li>Intellij Docker plugin</li>
+</ol>
 
-	1. Docker Kitematic (v0.17.0 - doesnt have bug with showing no container log)
-	2. Intellij Docker plugin
+##Other different helpful Docker-Compose commands (the same applies to Docker)
+<ul>
+<li>Start of previously prepared .YML configuration file (Important! to start the file beeing in proper localization CMD - where the file resides)</li>
 
-##Other different helpful Docker commands
+    docker-compose up -d
+<li>Stop all containers</li>
 
-	1.Start of previously prepared .YML configuration file (important! to start the file beeing in proper localization CMD - where the file resides)
-		#docker-compose up -d 
-	2.Stop all containers
-		#docker-compose stop
-	3.Remove the application container
-		#docker-compose rm -f
-	4.List all images
-		#docker images
-	5.List running containers
-		#docker ps
+    docker-compose stop
+<li>Remove the application containers</li>
+
+    docker-compose rm -f
+<li>List all images</li>
+
+    docker images
+<li>List running containers</li>
+
+    docker ps
+</ul>
 
 ##Compilation Fixes:
-
 Docker Firewall Fix - drives are not shared - set docker network type to private
-Powershell command - run as system administrator
-	#Set-NetConnectionProfile -interfacealias "vEthernet (DockerNAT)" -NetworkCategory Private
+Powershell command - run as system administrator:
+
+	Set-NetConnectionProfile -interfacealias "vEthernet (DockerNAT)" -NetworkCategory Private
