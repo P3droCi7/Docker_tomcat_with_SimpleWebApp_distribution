@@ -10,13 +10,14 @@
 		#docker run -d -p 8080:8080 --name container_name image_name
 
 ##You are able to reach:
+
 	- Tomcat Manager @ localhost:8080
 		Login:admin 
 		Password:admin
-	
 	- SimpleWebApp   @	localhost:8080/SimpleWebApp
 
 ##Helpful Applications
+
 	1. Docker Kitematic (v0.17.0 - doesnt have bug with showing no container log)
 	2. Intellij Docker plugin
 
@@ -34,6 +35,7 @@
 		#docker ps
 
 ##Compilation Fixes:
+
 Docker Firewall Fix - drives are not shared - set docker network type to private
 Powershell command - run as system administrator
 	#Set-NetConnectionProfile -interfacealias "vEthernet (DockerNAT)" -NetworkCategory Private
