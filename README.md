@@ -18,6 +18,30 @@
         Password:admin
 - SimpleWebApp   @localhost:8080/SimpleWebApp
 
+##Hub.docker & commands
+Remote Repository:
+https://hub.docker.com/repository/docker/p3droci7/docker_tomcat_webapp
+
+Hub.docker push
+
+	docker login
+	docker push p3droci7/docker_tomcat_webapp:<tagname>
+
+<ol>
+<li>Console docker hub login</li>
+<li>Pushes image named "p3droci7/docker_tomcat_webapp" into manually created Docker Hub repository with defined tagname</li>
+</ol>
+
+Hub.docker pull
+
+	docker pull p3droci7/docker_tomcat_webapp:1.0
+	docker run -d -p 8080:8080 --name container_name p3droci7/docker_tomcat_webapp:1.0
+
+<ol>
+<li>Creates docker image named "p3droci7/docker_tomcat_webapp:1.0"</li>
+<li>Creates docker container named "container_name"</li>
+</ol>
+
 ##Helpful Applications
 <ol>
 <li>Docker Kitematic (v0.17.0 - doesnt have bug with showing no container log)</li>
